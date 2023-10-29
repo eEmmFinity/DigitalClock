@@ -11,3 +11,10 @@ setInterval(() => {
         hrs.innerHTML -= 12;
     }
 }, 1000);
+
+const btn = document.querySelector('.light');
+
+btn.addEventListener('click', () => {
+    let element = document.body.firstElementChild
+    element.classList.toggle("dark");
+})

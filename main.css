@@ -1,87 +1,107 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    html,
-    body {
-        height: 100vh;
-        width: 100vw;
-    }
-    
-    .container {
-        min-height: 100vh;
-        width: 100%;
-        background: linear-gradient(43deg, #3d4983 0%, #e71dda 46%, #bba479 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .clock {
-        background-color: rgba(255, 0, 0, 0.474);
-        color: #fff;
-        width: 50%;
-        height: 130px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        position: relative;
-        border-radius: 10px;
-        backdrop-filter: blur(50px);
-    }
-    
-    span {
-        text-align: center;
-    }
-    
-    .a {
-        position: relative;
-    }
-    
-    .a::after {
-        content: 'HOURS';
-        position: absolute;
-        bottom: -10px;
-        font-size: 13px;
-        transform: translate(-115%);
-    }
-    
-    .m::after {
-        content: 'MINUTES';
-    }
-    
-    .s::after {
-        content: 'SECONDS';
-    }
-    /* .clock::before {
-        content: '';
-        position: absolute;
-        top: -50px;
-        left: -50px;
-        height: 100px;
-        width: 100px;
-        border-radius: 5px;
-        background-color: #b3c157;
-        z-index: - 1;
-    }
-    
-    .clock::after {
-        content: '';
-        position: absolute;
-        right: -50px;
-        bottom: -50px;
-        height: 100px;
-        width: 100px;
-        border-radius: 50px;
-        background-color: #b3c157;
-        z-index: -1;
-    } */
-    
-    .clock span {
-        font-size: 80px;
-        width: 100px;
-        display: inline-block;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(43deg, #3d4983 0%, #e71dda 46%, #bba479 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 1s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.dark {
+    background: #000 !important;
+}
+
+.light .night {
+    visibility: hidden;
+}
+
+.dark .light .night {
+    visibility: visible;
+    transform: translate(0%, -80%);
+    transform: .1s;
+    color: #000 !important;
+    font-weight: lighter;
+    font-size: 30px;
+}
+
+.dark .light .day {
+    visibility: hidden;
+}
+
+.clock {
+    background-color: rgba(255, 0, 0, 0.474);
+    color: #fff;
+    width: 50%;
+    height: 130px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    backdrop-filter: blur(50px);
+}
+
+.dark .clock {
+    background-color: rgb(255, 0, 0);
+}
+
+span {
+    text-align: center;
+}
+
+.a {
+    position: relative;
+}
+
+.a::after {
+    content: "HOURS";
+    position: absolute;
+    bottom: -10px;
+    font-size: 13px;
+    transform: translate(-115%);
+}
+
+.m::after {
+    content: "MINUTES";
+}
+
+.s::after {
+    content: "SECONDS";
+}
+
+.clock span {
+    font-size: 5rem;
+    width: 100px;
+    display: inline-block;
+}
+
+.light {
+    position: absolute;
+    background: #fff;
+    height: 50px;
+    width: 50px;
+    right: 3%;
+    top: 8%;
+    border-radius: 50px;
+}
+
+.dark .light {
+    background: #fff;
+    transition: .1s;
+    backdrop-filter: blur(50px);
+}
