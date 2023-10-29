@@ -37,6 +37,7 @@ body {
     color: #000 !important;
     font-weight: lighter;
     font-size: 30px;
+    cursor: pointer;
 }
 
 .dark .light .day {
